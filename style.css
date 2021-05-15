@@ -1,0 +1,346 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+  }
+  body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:4rem auto;
+  }
+  body.light .main{
+    background-color: rgb(245, 245, 245);
+  }
+  body.light .card,.todo-list,.options{
+    background-color: #fff;
+  }
+  body.light .todo-list{
+    background-color: #fff;
+  }
+  body.light .todo-list li{
+    color: #000;
+    border-bottom: 1px solid #000;
+  }
+  body.light #delbtn:hover{
+    color: #000;
+  }
+  body.light .options{
+    background-color: #fff;
+    color: rgb(170, 170, 170);
+  }
+
+  body.light .btn{
+    border: 3px solid #ccc;
+  }
+  body.light input{
+    color: #000;
+  }
+  ul{
+    list-style: none;
+  }
+  .d-flex{
+    display: flex;
+  }
+  .header{
+    height: 300px;
+    background-image: url(./images/bg-desktop-dark.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .header i{
+    color: #fff;
+    font-size: 35px;
+    padding:1rem;
+    cursor: pointer;
+  }
+  .fa-volume-up{
+    display: none;
+  }
+  .main{
+    display: flex;
+    flex: 1;
+    background-color: hsl(235, 21%, 11%);
+    position: relative;
+    padding-bottom: 6rem;
+  }
+  .card-wrapper{
+    margin: -250px auto 0;
+    width:45%;
+    /* min-height:300px; */
+    /* border: 1px solid #000; */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    padding: 2rem;
+  }
+  .title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between  ;
+  }
+  .title h3{
+    font-size: 2rem;
+  }
+  .title .sun{
+    cursor: pointer;
+  }
+  .title .sun:hover{
+    animation: rotateSun infinite 3s linear;
+  }
+  @keyframes rotateSun{
+    0%{
+      transform: rotate(0deg);
+    }100%{
+      transform: rotate(360deg);
+    }
+  }
+  .title .moon{
+    display: none;
+    cursor: pointer;
+
+  }
+  .title .moon:hover{
+    animation: rotateMoon alternate infinite 1s linear;
+  }
+  @keyframes rotateMoon{
+    0%{
+      transform: rotate(-30deg);
+    }100%{
+      transform: rotate(0deg);
+    }
+  }
+  .card{
+    width: 100%;
+    min-height: 4rem;
+    background-color: hsl(235, 24%, 19%);
+    color: #cacde8;;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+  }
+  .btn,.check{
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    background:transparent;
+    border: 3px solid #393a4c;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    position: relative;
+    outline: 0;
+  }
+  .check.show::after{
+    opacity:1;
+    transition: unset;
+  }
+
+  .btn::after,.check:after{
+    content: url(./images/icon-check.svg);
+    position: absolute;
+    top: -3.5px;
+    left: -4px;
+    width:30px;
+    height:30px;
+    background:linear-gradient(to right,hsl(192, 100%, 67%), hsl(280, 87%, 65%)) center no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    opacity: 0;
+    transition:.2s linear
+  }
+  .btn:hover::after{
+    opacity:1;
+  }
+
+  .input{
+    width:100%;
+    height: 2.5rem;
+    font-size: 1.5rem;  
+    border-color: transparent;
+    background-color: transparent;
+    outline: 0;
+    color: #fff;
+  }
+ .todo-list{
+   background: hsl(235, 24%, 19%);
+   width: 100%;
+    min-height: 4rem;
+    background-color: hsl(235, 24%, 19%);
+    color: #cacde8;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem 0.5rem 0 0;
+    margin-top: 2rem;
+ }
+ .todo-list ul{
+   width: 100%;
+ }
+ .todo-list img{
+   margin: 0 auto;
+ }
+ .todo{
+   display: flex;
+   align-items: center;
+   padding: 1.5rem;
+   font-size: 1.6rem;
+   border-bottom: 1px solid #cacde8;
+   transition: .5s all;
+ }
+ .todo p{
+   padding-right: 5rem;
+   /* background-color: #fff; */
+   /* width:80%; */
+   outline: 0;
+ }
+ .todo p.edit{
+   transition:.2s ease-in;
+   background:#ccc;
+   border: 1px solid rgba(255,255,255,.1);
+   color: #000;
+ }
+ .todo-row .show{
+   color: rgba(255,255,255,.5);
+   text-decoration: line-through;
+ }
+ body.light .todo-row .show{
+        color: gray;
+        text-decoration: line-through;
+      }
+ 
+ .todo-row{
+   width:100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+ .todo-row i{
+   cursor: pointer;
+   color: #cacde8;
+ }
+
+ .options{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 1rem;
+   background-color: hsl(235, 24%, 19%);
+   border-radius:0 0  0.5rem 0.5rem;
+   color: rgba(255,255,255,.3);
+ }
+ .menu span{
+   margin-right: 0.5rem;
+ }
+ .options .menu span,#clearcombtn{
+   cursor: pointer;
+ }
+ #allbtn:hover,#activebtn:hover,#completebtn:hover,#clearcombtn:hover{
+   color: #fff;
+   transition: .2s all;
+ }
+ body.light     .options .menu #allbtn:hover{
+   color: #000;
+   transition: .2s all;
+ }
+ body.light  .options .menu #activebtn:hover{
+   color: #000;
+   transition: .2s all;
+
+ }
+ body.light .options .menu #completebtn:hover{
+   color: #000;
+   transition: .2s all;
+
+ }
+ body.light #clearcombtn:hover{
+   color: #000;
+   transition: .2s all;
+ }
+ .menu span{
+     cursor: pointer;
+ }
+ .todo-list img{
+    display: block;
+    margin: 0 auto;
+}
+ @media screen and (max-width:1266px){
+     .card-wrapper{
+         width:48%;
+     }
+ }
+ @media screen and (max-width:1226px){
+    .card-wrapper{
+        width:50%;
+    }
+}
+@media screen and (max-width:1100px){
+    .card-wrapper{
+        width:54%;
+    }
+}
+@media screen and (max-width:1000px){
+    .card-wrapper{
+        width:58%;
+    }
+}
+@media screen and (max-width:904px){
+    .card-wrapper{
+        width:64%;
+    }
+}
+@media screen and (max-width:802px){
+    .card-wrapper{
+        width:68%;
+    }
+}
+@media screen and (max-width:772px){
+    .card-wrapper{
+        width:90%;
+    }
+    .todo-list img{
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .options{
+        position: relative;
+    }
+    .options .menu{
+        width:100%;
+        height: 60px;
+        position: absolute;
+        left: 0;
+        top:5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background-color: hsl(235, 24%, 19%);
+    }
+    body.light .options .menu{
+        background-color: #fff;
+    }
+    .menu-wrapper{
+        width:50%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .todo{
+        font-size: 1.2rem;
+    }
+
+}
+@media screen and (max-width:390px){
+    .card-wrapper{
+        width:100%;
+    }
+    .desktop-section{
+        display: none;
+    }
+}

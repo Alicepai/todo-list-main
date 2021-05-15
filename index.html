@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.13.0/Sortable.min.js" integrity="sha512-5x7t0fTAVo9dpfbp3WtE2N6bfipUwk7siViWncdDoSz2KwOqVC1N9fDxEOzk0vTThOua/mglfF8NO7uVDLRC8Q==" crossorigin="anonymous"></script>
+  <title>Frontend Mentor | Todo app</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="header">
+     <div class="volumn">
+      <i class="fas fa-volume-up" ></i>
+      <i class="fas fa-volume-mute" data-id="mute"></i>
+     </div>
+    </header>
+    <main class="main">
+      <form class="card-wrapper" action="">
+        <div class="title">
+          <h3>TODO</h3>
+          <div class="icons">
+            <img class="sun" src="./images/icon-sun.svg" alt="">
+          <img class="moon" src="./images/icon-moon.svg" alt="">
+          </div>
+        </div>
+        <div class="card">
+          <button type="button" class="btn"></button>
+          <input type="text" class="input" placeholder="Create todo list here">
+        </div>
+        <div class="todo-list">
+          <ul>
+          </ul>
+        </div>
+        <div class="options">
+          <div class="item-count"><span id="item_count">5</span> items left</div>
+          <div class="menu desktop-section">
+            <div class="menu-wrapper">
+              <span id="allbtn">All</span>
+              <span id="activebtn">Active</span>
+              <span id="completebtn">Completed</span>
+            </div>
+          </div>
+          <div id="clearcombtn">Clear completed</div>
+        </div>
+      </form>
+    </main>
+
+  <script src="./all.js"></script>
+  </div>
+</body>
+</html>
+
+
